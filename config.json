@@ -1,8 +1,8 @@
 {
   "PhoneAsItem": {
-    "enabled": false,
-    "exportResource": "my-core-resource",
-    "exportFunction": "myCheckerFunction"
+    "enabled": true,
+    "exportResource": "dependencies",
+    "exportFunction": "hasPhone"
   },
   "twitter": {
     "showNotifications": true,
@@ -19,31 +19,36 @@
     "maxImages": 3
   },
   "general": {
-    "useResourceIntegration": false,
-    "toggleKey": "f1",
+    "useResourceIntegration": true,
+    "toggleKey": "F5",
     "toggleCommand": "phone",
-    "defaultLanguage": "en"
+    "defaultLanguage": "fr"
   },
   "profanityFilter": {
     "enabled": false,
-    "badWords": ["esx"]
+    "badWords": []
   },
   "database": {
     "useIdentifierPrefix": false,
-    "playerTable": "users",
-    "identifierColumn": "identifier",
-    "identifierType": "license",
-    "profileQueries": true,
-    "phoneNumberColumn": "phone_number"
+    "playerTable": "characters",
+    "identifierColumn": "id",
+    "identifierType": "id",
+    "profileQueries": false,
+    "phoneNumberColumn": "phone"
   },
   "debug": {
     "level": "silly",
-    "enabled": true,
-    "sentryEnabled": true
+    "enabled": false,
+    "sentryEnabled": false
   },
   "defaultContacts": [],
-  "disabledApps": [],
-  "apps": ["pefcl"],
+  "disabledApps": [
+    "twitter",
+    "match",
+    "marketplace",
+    "note"
+  ],
+  "apps": [],
   "voiceMessage": {
     "enabled": false,
     "authorizationHeader": "PE-Secret",
