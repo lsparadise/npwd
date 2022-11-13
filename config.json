@@ -4,20 +4,6 @@
     "exportResource": "dependencies",
     "exportFunction": "hasPhone"
   },
-  "twitter": {
-    "showNotifications": true,
-    "generateProfileNameFromUsers": true,
-    "allowEditableProfileName": true,
-    "allowDeleteTweets": true,
-    "allowReportTweets": true,
-    "allowRetweet": true,
-    "characterLimit": 160,
-    "newLineLimit": 10,
-    "enableAvatars": true,
-    "enableEmojis": true,
-    "enableImages": true,
-    "maxImages": 3
-  },
   "general": {
     "useResourceIntegration": true,
     "toggleKey": "F5",
@@ -37,16 +23,18 @@
     "phoneNumberColumn": "phone"
   },
   "debug": {
-    "level": "silly",
-    "enabled": false,
+    "level": "error",
+    "enabled": true,
     "sentryEnabled": false
   },
   "defaultContacts": [],
   "disabledApps": [
-    "twitter",
-    "match",
-    "marketplace",
-    "note"
+    "BROWSER",
+    "CALCULATOR",
+    "MATCH",
+    "TWITTER",
+    "MARKETPLACE",
+    "NOTES"
   ],
   "apps": [],
   "voiceMessage": {
