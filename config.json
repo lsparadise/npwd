@@ -22,6 +22,17 @@
     "profileQueries": false,
     "phoneNumberColumn": "phone"
   },
+  "images": {
+    "url": "https://api.imgur.com/3/image",
+    "type": "imgur",
+    "imageEncoding": "jpg",
+    "contentType": "multipart/form-data",
+    "useContentType": true,
+    "authorizationHeader": "Authorization",
+    "authorizationPrefix": "Client-ID",
+    "useAuthorization": true,
+    "returnedDataIndexes": ["data", "link"]
+  },
   "debug": {
     "level": "error",
     "enabled": true,
