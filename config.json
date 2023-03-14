@@ -47,7 +47,7 @@
     "MARKETPLACE",
     "NOTES"
   ],
-  "apps": [],
+  "apps": ["npwd_advertisments"],
   "voiceMessage": {
     "enabled": false,
     "authorizationHeader": "PE-Secret",

@@ -1,9 +1,11 @@
 name: Nightly release 
+
 on:
   push:
-    - master
-  tags-ignore:
-    - v*
+    branches:
+      - master
+    tags-ignore:
+      - v*
 
 jobs:
   create-nightly-release:
@@ -33,20 +35,6 @@ jobs:
 
       - name: Run build
         run: REACT_APP_VERSION=${{ steps.get_tag.outputs.VERSION_TAG }} pnpm build
-
-      - name: Push manifest change
-        uses: EndBug/add-and-commit@v8
-        with:
-          add: fxmanifest.lua
-          push: true
-          author_name: Manifest Bumper
-          author_email: 41898282+github-actions[bot]@users.noreply.github.com
-          message: "chore: bump manifest version to ${{ github.ref_name }}"
-
-      - name: Update tag ref
-        uses: EndBug/latest-tag@latest
-        with:
-          tag-name: ${{ github.ref_name }}
 
       #- name: Create Sentry Release (NPWD)
       #  run: |
