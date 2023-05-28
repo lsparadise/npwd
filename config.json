@@ -10,10 +10,6 @@
     "toggleCommand": "phone",
     "defaultLanguage": "fr"
   },
-  "profanityFilter": {
-    "enabled": false,
-    "badWords": []
-  },
   "database": {
     "useIdentifierPrefix": false,
     "playerTable": "characters",
@@ -39,19 +35,6 @@
     "sentryEnabled": false
   },
   "defaultContacts": [],
-  "disabledApps": [
-    "BROWSER",
-    "CALCULATOR",
-    "MATCH",
-    "TWITTER",
-    "MARKETPLACE",
-    "NOTES"
-  ],
-  "apps": ["pefcl"],
-  "voiceMessage": {
-    "enabled": false,
-    "authorizationHeader": "PE-Secret",
-    "url": "",
-    "returnedDataIndexes": ["url"]
-  }
+  "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES"],
+  "apps": []
 }
