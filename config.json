@@ -35,6 +35,6 @@
     "sentryEnabled": false
   },
   "defaultContacts": [],
-  "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES"],
+  "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES", "DARKCHAT"],
   "apps": []
 }
