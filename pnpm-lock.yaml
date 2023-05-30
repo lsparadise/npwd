@@ -183,6 +183,9 @@ importers:
       esbuild:
         specifier: ^0.15.15
         version: 0.15.15
+      esbuild-plugin-copy:
+        specifier: ^2.1.1
+        version: 2.1.1(esbuild@0.15.15)
       eslint:
         specifier: ^7.32.0
         version: 7.32.0
@@ -297,6 +300,9 @@ importers:
       react-uuid:
         specifier: ^1.0.3
         version: 1.0.3
+      react-virtuoso:
+        specifier: ^4.3.8
+        version: 4.3.8(react-dom@17.0.2)(react@17.0.2)
       recoil:
         specifier: ^0.7.7
         version: 0.7.7(react-dom@17.0.2)(react@17.0.2)
@@ -7579,6 +7585,18 @@ packages:
     requiresBuild: true
     optional: true
 
+  /esbuild-plugin-copy@2.1.1(esbuild@0.15.15):
+    resolution: {integrity: sha512-Bk66jpevTcV8KMFzZI1P7MZKZ+uDcrZm2G2egZ2jNIvVnivDpodZI+/KnpL3Jnap0PBdIHU7HwFGB8r+vV5CVw==}
+    peerDependencies:
+      esbuild: '>= 0.14.0'
+    dependencies:
+      chalk: 4.1.2
+      chokidar: 3.5.3
+      esbuild: 0.15.15
+      fs-extra: 10.1.0
+      globby: 11.1.0
+    dev: true
+
   /esbuild-sunos-64@0.15.15:
     resolution: {integrity: sha512-jOPBudffG4HN8yJXcK9rib/ZTFoTA5pvIKbRrt3IKAGMq1EpBi4xoVoSRrq/0d4OgZLaQbmkHp8RO9eZIn5atA==}
     engines: {node: '>=12'}
@@ -13736,6 +13754,17 @@ packages:
   /react-uuid@1.0.3:
     resolution: {integrity: sha512-cw6Rr6JphvsdK4xHPGBjKD7XSH6Y6i4NJFWUO3OiDd7NLcR8xVeQ3CfeKm7h+S5tpZZVfbH3Tkrz/ydsIiV8pA==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
+    dev: false
+
+  /react-virtuoso@4.3.8(react-dom@17.0.2)(react@17.0.2):
+    resolution: {integrity: sha512-hoZj8Dl1R9fYqtUwA5LjCii1djO4ZNtoYkYsR52ZjdJzdXh2hec1IQ2O+1MZNjLTb4v8ff3hbt34StiHTVDdlg==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      react: '>=16 || >=17 || >= 18'
+      react-dom: '>=16 || >=17 || >= 18'
+    dependencies:
+      react: 17.0.2
+      react-dom: 17.0.2(react@17.0.2)
     dev: false
 
   /react@17.0.2:
