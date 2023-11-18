@@ -1,6 +1,6 @@
 import { CallHistoryItem } from '@typings/call';
-import { FetchDefaultLimits } from '@game/server/utils/ServerConstants';
-import { DbInterface } from '../db';
+import { DbInterface } from '@npwd/database';
+import { FetchDefaultLimits } from '../utils/ServerConstants';
 
 export class _CallsRepo {
   async saveCall(call: CallHistoryItem): Promise<void> {
@@ -10,7 +10,7 @@ export class _CallsRepo {
       call.identifier,
       call.transmitter,
       call.receiver,
-      call.isAnonymous,
+      call.isAnonymous ?? false,
       call.start,
     ]);
   }

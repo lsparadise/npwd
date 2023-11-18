@@ -7,6 +7,10 @@ permissions:
   deployments: write
   pull-requests: read
 
+on:
+  push:
+    branches:
+      - master
 
 jobs:
   create-nightly-release:
@@ -14,14 +18,20 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
       - name: Get tag
-        uses: project-error/get-tag@v1.0
+        uses: project-error/get-tag@v1.2
         with:
           environment: "dev"
           prerelease: true
         id: get_tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
 
       - name: Bump manifest version
         run: node .github/actions/bump-manifest-version.js
@@ -37,11 +47,13 @@ jobs:
           author_email: 41898282+github-actions[bot]@users.noreply.github.com
           message: "chore: bump manifest version to nightly ${{ steps.get_tag.outputs.release_tag }}"
 
+
+      # super hacky 
       - name: Checkout source code
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
-          ref: ${{ github.event.repository.default_branch }}
+    
       - name: Install pnpm
         uses: pnpm/action-setup@v2.2.2
         with:
@@ -80,15 +92,25 @@ jobs:
           cd ./temp && zip -r ../npwd.zip ./npwd
 
       - name: Create Release
-        uses: "marvinpinto/action-automatic-releases@v1.2.1"
+        uses: "project-error/release-action@v2.1"
         id: auto_release
         with:
-          repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          title: NPWD Nightly
+          environment: "dev"
+          title: NPWD Nightly ${{ steps.get_tag.outputs.release_tag }}
           prerelease: true
           automatic_release_tag: ${{ steps.get_tag.outputs.release_tag }}
           files: npwd.zip
-
         env:
-          CI: false
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifacts
+        run: |
+          curl -L \
+          -X POST \
+          -H "Accept: application/vnd.github+json" \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          -H "Content-Type: application/octet-stream" \
+          "https://uploads.github.com/repos/project-error/npwd/releases/${{ steps.auto_release.outputs.release_id }}/assets?name=npwd.zip" \
+          --data-binary "@npwd.zip"
+
