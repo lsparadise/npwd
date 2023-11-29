@@ -36,5 +36,11 @@
   },
   "defaultContacts": [],
   "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES", "DARKCHAT"],
-  "apps": []
+  "apps": [],
+  "voiceMessage": {
+    "enabled": false,
+    "authorizationHeader": "PE-Secret",
+    "url": "",
+    "returnedDataIndexes": ["url"]
+  }
 }
