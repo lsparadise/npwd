@@ -30,7 +30,7 @@
     "returnedDataIndexes": ["data", "link"]
   },
   "debug": {
-    "level": "error",
+    "level": "silly",
     "enabled": true,
     "sentryEnabled": false
   },
