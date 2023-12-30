@@ -29,18 +29,5 @@
     "useAuthorization": true,
     "returnedDataIndexes": ["data", "link"]
   },
-  "debug": {
-    "level": "silly",
-    "enabled": true,
-    "sentryEnabled": false
-  },
-  "defaultContacts": [],
-  "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES", "DARKCHAT"],
-  "apps": [],
-  "voiceMessage": {
-    "enabled": false,
-    "authorizationHeader": "PE-Secret",
-    "url": "",
-    "returnedDataIndexes": ["url"]
-  }
+  "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES", "DARKCHAT"]
 }
