@@ -1,6 +1,11 @@
 import { ESXFramework } from './esx/esx-server';
+import { NDCoreFramework } from './ndcore/ndcore-server';
 import { QBCoreFramework } from './qb/qbcore-server';
 import { QBXFramework } from './qbx/qbx-server';
+import { Standalone } from './standalone/standalone-server';
+
+
+export type Framework = 'qbcore' | 'qbx' | 'esx' | 'standalone' | 'ndcore';
 
 export interface Strategy {
   onStart(): void;
@@ -10,7 +15,7 @@ export interface Strategy {
 export class FrameworkStrategy {
   private strategy: Strategy | null;
 
-  constructor(strategy: 'qbcore' | 'qbx' | 'esx' | 'standalone') {
+  constructor(strategy: Framework) {
     switch (strategy) {
       case 'qbcore':
         this.strategy = new QBCoreFramework();
@@ -21,11 +26,14 @@ export class FrameworkStrategy {
       case 'esx':
         this.strategy = new ESXFramework();
         break;
+      case 'ndcore':
+        this.strategy = new NDCoreFramework();
+        break;
       case 'standalone':
-        this.strategy = null;
+        this.strategy = new Standalone();
         break;
       default:
-        this.strategy = null;
+        this.strategy = new Standalone();
         break;
     }
   }
@@ -39,7 +47,7 @@ export class FrameworkStrategy {
   }
 }
 
-const framework = GetConvar('npwd:framework', 'standalone') as 'qbcore' | 'qbx' | 'esx' | 'standalone';
+const framework = GetConvar('npwd:framework', 'standalone') as Framework
 
 const strategy = new FrameworkStrategy(framework);
 
