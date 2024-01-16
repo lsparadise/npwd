@@ -11,8 +11,7 @@ export const MockTwitterProfile = {
   id: 1,
   profile_name: 'npwd admin',
   identifier: '421431414441124124',
-  avatar_url:
-    'https://libertycity.net/uploads/download/gta5_newskins/fulls/9kfhpadblk227v1tocv8mmgod3/1542874685734_653468-4.jpg',
+  avatar_url: 'https://i.fivemanage.com/images/3ClWwmpwkFhL.png',
   bio: 'Please no ERP',
   location: 'In my admin car',
   job: '',
@@ -59,7 +58,8 @@ export const MockTweets: Tweet[] = [
     avatar_url: '',
     id: 112,
     images: 'https://i.projecterror.dev/K45dbT6vsaKtxVMW4F66VZ.webp',
-    message: "Exploring the wonders of our world 🌍 and beyond 🚀! From the depths of the ocean to the mysteries of space, there's so much to discover. Let's cherish our planet, promote science and education, and work together for a sustainable future. #DiscoverEarth #ScienceForAll 🌱🔭",
+    message:
+      "Exploring the wonders of our world 🌍 and beyond 🚀! From the depths of the ocean to the mysteries of space, there's so much to discover. Let's cherish our planet, promote science and education, and work together for a sustainable future. #DiscoverEarth #ScienceForAll 🌱🔭",
     createdAt: '2021-12-01 00:42:03',
     updatedAt: '2021-12-01 00:42:03',
     identifier: 'sdfjsadfafjadfjas',

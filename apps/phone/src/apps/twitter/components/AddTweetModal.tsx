@@ -1,6 +1,6 @@
 import { memo, useCallback, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import Modal from '../../../ui/components/Modal';
+import Modal, { Modal2 } from '../../../ui/components/Modal';
 import { IMAGE_DELIMITER } from '../utils/images';
 import { isImageValid } from '@common/utils/isImageValid';
 import { useModal } from '../hooks/useModal';
@@ -157,7 +157,7 @@ const AddTweetModal = () => {
   if (!ResourceConfig) return null;
 
   return (
-    <Modal visible={modalVisible} handleClose={_handleClose}>
+    <Modal2 visible={modalVisible} handleClose={_handleClose}>
       <TweetMessage
         modalVisible={modalVisible}
         onEnter={submitTweet}
@@ -185,7 +185,7 @@ const AddTweetModal = () => {
           onCloseClick={showEmoji ? toggleShowEmoji : toggleShowImagePrompt}
         />
       </ButtonsContainer>
-    </Modal>
+    </Modal2>
   );
 };
 

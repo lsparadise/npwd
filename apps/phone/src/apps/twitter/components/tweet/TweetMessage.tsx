@@ -2,7 +2,7 @@ import React, { memo, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePhone } from '@os/phone/hooks/usePhone';
 import { getNewLineCount } from '../../utils/message';
-import { TextField } from '@ui/components/Input';
+import { NPWDTextarea, TextField } from '@ui/components/Input';
 import { styled } from '@mui/material';
 
 const MessageInput = styled(TextField)({
@@ -14,7 +14,7 @@ const MessageInput = styled(TextField)({
 });
 
 export const TweetMessage = ({ modalVisible, message, handleChange, onEnter }) => {
-  const textFieldInputRef = useRef(null);
+  const textFieldInputRef = useRef<HTMLTextAreaElement>(null);
   const { ResourceConfig } = usePhone();
   const [t] = useTranslation();
 
@@ -47,6 +47,17 @@ export const TweetMessage = ({ modalVisible, message, handleChange, onEnter }) =
       onEnter();
     }
   };
+
+  return (
+    <NPWDTextarea
+      value={message}
+      onChange={(e) => handleChange(e.currentTarget.value)}
+      ref={textFieldInputRef}
+      placeholder={t('TWITTER.TWEET_MESSAGE_PLACEHOLDER')}
+      className="min-h-20 w-full resize-none rounded-md border border-neutral-600 bg-neutral-700 p-2 text-base text-white outline-none focus:ring-2 focus:ring-sky-400"
+    />
+  );
+
   return (
     <MessageInput
       value={message}
@@ -58,6 +69,7 @@ export const TweetMessage = ({ modalVisible, message, handleChange, onEnter }) =
       }}
       onChange={(e) => handleChange(e.currentTarget.value)}
       onKeyPress={handleOnEnter}
+      fullWidth
       multiline
       placeholder={t('TWITTER.TWEET_MESSAGE_PLACEHOLDER')}
       inputRef={textFieldInputRef}
