@@ -8,7 +8,8 @@
     "useResourceIntegration": true,
     "toggleKey": "F5",
     "toggleCommand": "phone",
-    "defaultLanguage": "fr"
+    "defaultLanguage": "fr",
+    "phoneNumberFormat": "/(555)(\\d{4})/"
   },
   "database": {
     "useIdentifierPrefix": false,
