@@ -14,8 +14,8 @@
   "database": {
     "useIdentifierPrefix": false,
     "playerTable": "characters",
-    "identifierColumn": "id",
-    "identifierType": "id",
+    "identifierColumn": "player",
+    "identifierType": "discord",
     "profileQueries": false,
     "phoneNumberColumn": "phone"
   },
