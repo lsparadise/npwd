@@ -9,7 +9,7 @@
     "toggleKey": "F5",
     "toggleCommand": "phone",
     "defaultLanguage": "fr",
-    "phoneNumberFormat": "/(555)(\\d{4})/"
+    "phoneNumberFormat": "/(\\d{3})(\\d{4})/"
   },
   "database": {
     "useIdentifierPrefix": false,
