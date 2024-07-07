@@ -14,21 +14,13 @@
   "database": {
     "useIdentifierPrefix": false,
     "playerTable": "characters",
-    "identifierColumn": "player",
-    "identifierType": "discord",
+    "identifierColumn": "id",
+    "identifierType": "id",
     "profileQueries": false,
     "phoneNumberColumn": "phone"
   },
   "images": {
-    "url": "https://api.imgur.com/3/image",
-    "type": "imgur",
-    "imageEncoding": "jpg",
-    "contentType": "multipart/form-data",
-    "useContentType": true,
-    "authorizationHeader": "Authorization",
-    "authorizationPrefix": "Client-ID",
-    "useAuthorization": true,
-    "returnedDataIndexes": ["data", "link"]
+    "useWebhook": true
   },
   "disabledApps": ["BROWSER", "CALCULATOR", "MATCH", "TWITTER", "MARKETPLACE", "NOTES", "DARKCHAT"]
 }
