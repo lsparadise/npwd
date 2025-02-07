@@ -5,7 +5,7 @@
     "exportFunction": "hasPhone"
   },
   "general": {
-    "useResourceIntegration": false,
+    "useResourceIntegration": true,
     "toggleKey": "f5",
     "toggleCommand": "phone",
     "defaultLanguage": "fr",
@@ -29,5 +29,5 @@
     "sentryEnabled": false
   },
   "defaultContacts": [],
-  "disabledApps": ["TWITTER", "MARKETPLACE", "MATCH", "CALCULATOR", "BROWSER", "NOTES"]
+  "disabledApps": ["TWITTER", "MARKETPLACE", "MATCH", "CALCULATOR", "BROWSER", "NOTES", "IRC"]
 }
