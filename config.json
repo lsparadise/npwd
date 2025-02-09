@@ -29,5 +29,5 @@
     "sentryEnabled": false
   },
   "defaultContacts": [],
-  "disabledApps": ["TWITTER", "MARKETPLACE", "MATCH", "CALCULATOR", "BROWSER", "NOTES", "IRC"]
+  "disabledApps": ["TWITTER", "MARKETPLACE", "MATCH", "CALCULATOR", "BROWSER", "NOTES", "DARKCHAT"]
 }
